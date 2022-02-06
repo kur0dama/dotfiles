@@ -29,6 +29,7 @@ set expandtab							" expand tabs to spaces
 set encoding=utf-8						" use unicode
 set fileencoding=utf-8					" use unicode in buffer
 scriptencoding utf-8					" use unicode in scripts
+set nowrap						" turn off text wrapping
 
 "-------------------------------------------------------------------------------
 " SEARCH
@@ -62,6 +63,7 @@ call vundle#begin('~/.vim/plugged')
 " PLUGINS
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'tranvansang/vim-close-pair'
 
 call vundle#end()
 filetype plugin indent on
