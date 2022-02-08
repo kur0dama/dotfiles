@@ -64,6 +64,10 @@ call vundle#begin('~/.vim/plugged')
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'tranvansang/vim-close-pair'
+Plugin 'preservim/nerdcommenter'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'preservim/nerdtree'
+Plugin 'itchyny/lightline.vim'
 
 call vundle#end()
 filetype plugin indent on
