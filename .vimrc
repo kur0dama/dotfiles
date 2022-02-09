@@ -86,12 +86,15 @@ command EditBash :edit ~/.bashrc		" edit .bashrc
 " WINDOW MANAGEMENT
 map <Bar> :vnew<CR>            			" new v split with |
 map - <C-W>n        					" new h split with -
-map <Tab> <C-W>w 						" switch windows
 map <C-c> <C-W>c 						" close window
+map = <C-w>=                            " equalize split size
 
 " QUICKSAVE
 noremap <C-s> :wa<CR>					" save all
 inoremap <C-s> <Esc>:wa<CR>				" save all
+
+" SHOW/HIDE NERDTREE
+noremap <F7> :NERDTreeToggle<CR>
 
 "-------------------------------------------------------------------------------
 " FUNCTIONS
