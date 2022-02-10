@@ -88,6 +88,8 @@ map <Bar> :vnew<CR>            			" new v split with |
 map - <C-W>n        					" new h split with -
 map <C-c> <C-W>c 						" close window
 map = <C-w>=                            " equalize split size
+map <Tab> <C-W><right>                  " move to the right
+map <S-Tab> <C-W><left>                 " move to the left
 
 " QUICKSAVE
 noremap <C-s> :wa<CR>					" save all
