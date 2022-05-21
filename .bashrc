@@ -36,13 +36,15 @@ fi
 ################################################################################
 
 # If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
+parse_git_bg() {
+  if [[ $(git status -s 2> /dev/null) ]]; then
+    echo -e "\033[0;31m"
+  else
+    echo -e "\033[0;32m"
+  fi
+}
+
+PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;34m\]@\[\033[0;34m\]\h \w\[$(parse_git_bg)\]$(__git_ps1)\n\[\033[0;32m\]\$\[\033[0m\] '
 
 ################################################################################
 # ALIASES
