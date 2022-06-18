@@ -1,10 +1,9 @@
 #!/bin/bash
 
 # create folders
-[ ! -d "~/.vim" ] && mkdir ~/.vim
-[ ! -d "~/.vim/colors" ] && mkdir ~/.vim/colors
-[ ! -d "~/.vim/bundle" ] && mkdir ~/.vim/bundle
-[ ! -d "~/.vim_backup" ] && mkdir ~/.vim_backup
+[ ! -d "~/.vim/colors" ] && mkdir -p ~/.vim/colors
+[ ! -d "~/.vim/bundle" ] && mkdir -p ~/.vim/bundle
+[ ! -d "~/.vim_backup" ] && mkdir -p ~/.vim_backup
 
 # download vundle
 cd ~/.vim/bundle
@@ -14,6 +13,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git Vundle.vim
 cd ~
 [ -d ~/.bashrc ] && rm ~/.bashrc
 ln -s ~/dotfiles/.bashrc ~/.bashrc
+[ -d ~/.vimrc ] && rm ~/.vimrc
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/zenburn.vim ~/.vim/colors/zenburn.vim
 
@@ -30,3 +30,6 @@ curl --proto 'https' tlsv1.2 sSf https://sh.rustup.rs | sh
 # install Ocaml
 opam init
 opam install -y async core js_of_ocaml js_of_ocaml-ppx merlin utop ocp-indent
+
+# setup Python
+sudo apt-get install python3 python3-pip
