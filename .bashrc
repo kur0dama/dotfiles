@@ -110,3 +110,5 @@ bind "set show-all-if-ambiguous off"
 ################################################################################
 
 [ -d "~/.cargo/env" ] && source "$HOME/.cargo/env"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

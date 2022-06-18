@@ -24,6 +24,11 @@ vim +PluginInstall +qall
 sudo apt-get update
 sudo apt-get install gcc g++ curl tmux opam m4
 
+# install fzf
+git clone https://www.github.com/junegunn/fzf.git ~/fzf
+cd ~/fzf && ./install
+cd ~ && rm -R .fzf
+
 # install Rust
 curl --proto 'https' tlsv1.2 sSf https://sh.rustup.rs | sh
 
