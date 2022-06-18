@@ -12,7 +12,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git Vundle.vim
 
 # generate symlinks
 cd ~
-[[ -d ~/.bashrc ]] && rm ~/.bashrc
+[ -d ~/.bashrc ] && rm ~/.bashrc
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/zenburn.vim ~/.vim/colors/zenburn.vim
@@ -21,6 +21,7 @@ ln -s ~/dotfiles/zenburn.vim ~/.vim/colors/zenburn.vim
 vim +PluginInstall +qall
 
 # download linux packages
+sudo apt-get update
 sudo apt-get install gcc g++ curl tmux opam m4
 
 # install Rust
