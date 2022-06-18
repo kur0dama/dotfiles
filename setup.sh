@@ -8,9 +8,9 @@
 # download vundle
 cd ~/.vim/bundle
 git clone https://github.com/VundleVim/Vundle.vim.git Vundle.vim
+cd ~
 
 # generate symlinks
-cd ~
 [ -d ~/.bashrc ] && rm ~/.bashrc
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 [ -d ~/.vimrc ] && rm ~/.vimrc
