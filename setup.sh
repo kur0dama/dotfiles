@@ -22,7 +22,7 @@ function installVim () {
 
 function installPackages () {
   sudo apt-get update
-  sudo apt-get install gcc g++ curl tmux opam m4 gnome-tweaks
+  sudo apt-get install gcc g++ curl tmux opam m4 gnome-tweaks ranger
 
   git clone https://www.github.com/junegunn/fzf.git ~/fzf
   cd ~/fzf && ./install
