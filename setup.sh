@@ -33,6 +33,10 @@ function installRust () {
   curl --proto 'https' tlsv1.2 sSf https://sh.rustup.rs | sh
 }
 
+function installRustApps () {
+  cargo install alacritty csvlens
+}
+
 function installOcaml () {
   opam init
   opam install -y async core js_of_ocaml js_of_ocaml-ppx merlin utop ocp-indent
@@ -47,6 +51,7 @@ function installPython () {
 read -p "Symlink dotfiles? (y/N) " FLAG_INSTALL_VIM 
 read -p "Install dev linux packages? (y/N) " FLAG_INSTALL_PACKAGES
 read -p "Install Rust? (y/N) " FLAG_INSTALL_RUST
+read -p "Install Rust applications? (y/N) " FLAG_INSTALL_RUST_APPS
 read -p "Install Ocaml? (y/N) " FLAG_INSTALL_OCAML
 read -p "Install Python/Pip? (y/N) " FLAG_INSTALL_PYTHON
 
@@ -55,5 +60,6 @@ read -p "Install Python/Pip? (y/N) " FLAG_INSTALL_PYTHON
 if [[ "$FLAG_INSTALL_VIM" =~ [yY]{1} ]] then installVim fi
 if [[ "$FLAG_INSTALL_PACKAGES" =~ [yY]{1} ]] then installPackages fi
 if [[ "$FLAG_INSTALL_RUST" =~ [yY]{1} ]] then installRust fi
+if [[ "$FLAG_INSTALL_RUST_APPS" =~ [yY]{1} ]] then installRustApps fi
 if [[ "$FLAG_INSTALL_OCAML" =~ [yY]{1} ]] then installOcaml fi
 if [[ "$FLAG_INSTALL_PYTHON" =~ [yY]{1} ]] then installPython fi

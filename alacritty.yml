@@ -1,0 +1,47 @@
+env:
+  TERM: xterm-256color
+
+font:
+  normal:
+    family: Inconsolata
+  size: 9.0
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+colors:
+
+  primary:
+    background: '0x3d3d3d'
+    foreground: '0xdcdccc'
+
+  normal:
+    black:   '0x505050'
+    red:     '0xd7a5a4'
+    green:   '0x91ad91'
+    yellow:  '0xe8d7b9'
+    blue:    '0xc6eaff'
+    magenta: '0xba90bd'
+    cyan:    '0x9ad6d9'
+    white:   '0xf3f1d9'
+
+  bright:
+    black:   '0x7f7f7f'
+    red:     '0xe4b3b2'
+    green:   '0xd4e894'
+    yellow:  '0xeff0a5'
+    blue:    '0x6996bf'
+    magenta: '0xdcbecd'
+    cyan:    '0x9ad6d9'
+    white:   '0xf8f5ed'
+
+  dim:
+    black:   '0x333333'
+    red:     '0xf2777a'
+    green:   '0x99cc99'
+    yellow:  '0xffcc66'
+    blue:    '0x6699cc'
+    magenta: '0xcc99cc'
+    cyan:    '0x66cccc'
+    white:   '0xdddddd'
