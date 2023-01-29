@@ -110,6 +110,7 @@ bind "set show-all-if-ambiguous off"
 
 [ -d "~/.cargo/bin" ] && export PATH="$HOME/.cargo/bin:$PATH"
 [ -d "~/bin" ] && export PATH="$HOME/bin:$PATH"
+[ -d "/usr/local/go/bin" ] && export PATH=$PATH:/usr/local/go/bin
 
 ################################################################################
 # SOURCE EXTERNAL FILES
