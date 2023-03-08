@@ -48,12 +48,12 @@ function installPython () {
 
 ################################ GET RUN FLAGS #################################
 
-read -pr "Symlink dotfiles? (y/N) " FLAG_INSTALL_VIM 
-read -pr "Install dev linux packages? (y/N) " FLAG_INSTALL_PACKAGES
-read -pr "Install Rust? (y/N) " FLAG_INSTALL_RUST
-read -pr "Install Rust applications? (y/N) " FLAG_INSTALL_RUST_APPS
-read -pr "Install Ocaml? (y/N) " FLAG_INSTALL_OCAML
-read -pr "Install Python/Pip? (y/N) " FLAG_INSTALL_PYTHON
+read -p "Symlink dotfiles? (y/N) " FLAG_INSTALL_VIM 
+read -p "Install dev linux packages? (y/N) " FLAG_INSTALL_PACKAGES
+read -p "Install Rust? (y/N) " FLAG_INSTALL_RUST
+read -p "Install Rust applications? (y/N) " FLAG_INSTALL_RUST_APPS
+read -p "Install Ocaml? (y/N) " FLAG_INSTALL_OCAML
+read -p "Install Python/Pip? (y/N) " FLAG_INSTALL_PYTHON
 
 ################################# RUN INSTALL ##################################
 
