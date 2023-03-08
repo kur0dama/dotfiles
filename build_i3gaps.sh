@@ -15,20 +15,20 @@ autoconf libxcb-xrm0 libxcb-xrm-dev automake libxcb-shape0-dev \
 build-essential meson ninja-build i3status
 
 # make temp folder
-cd ~
+cd ~ || return
 [ -d "i3_gaps_temp" ] && rmdir -r i3_gaps_temp
-mkdir i3_gaps_temp && cd i3_gaps_temp
+mkdir i3_gaps_temp && cd i3_gaps_temp || return
 
 # clone repo
 git clone https://www.github.com/Airblader/i3 i3_gaps
-cd i3_gaps
+cd i3_gaps || return
 
 # compile
-mkdir -p build && cd build
+mkdir -p build && cd build || return
 meson ..
 ninja
 sudo ninja install
 
 # clean up
-cd ~
+cd ~ || return
 sudo rm -R i3_gaps_temp

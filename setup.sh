@@ -3,13 +3,13 @@
 ############################### SETUP FUNCTIONS ################################
 
 function installVim () {
-  [ ! -d "~/.vim/colors" ] && mkdir -p ~/.vim/colors
-  [ ! -d "~/.vim/bundle" ] && mkdir -p ~/.vim/bundle
-  [ ! -d "~/.vim_backup" ] && mkdir -p ~/.vim_backup
+  [ ! -d "$HOME/.vim/colors" ] && mkdir -p ~/.vim/colors
+  [ ! -d "$HOME/.vim/bundle" ] && mkdir -p ~/.vim/bundle
+  [ ! -d "$HOME/.vim_backup" ] && mkdir -p ~/.vim_backup
 
-  cd ~/.vim/bundle
+  cd ~/.vim/bundle || return
   git clone https://github.com/VundleVim/Vundle.vim.git Vundle.vim
-  cd ~
+  cd ~ || return
 
   [ -d ~/.bashrc ] && rm ~/.bashrc
   ln -s ~/dotfiles/.bashrc ~/.bashrc
@@ -48,18 +48,35 @@ function installPython () {
 
 ################################ GET RUN FLAGS #################################
 
-read -p "Symlink dotfiles? (y/N) " FLAG_INSTALL_VIM 
-read -p "Install dev linux packages? (y/N) " FLAG_INSTALL_PACKAGES
-read -p "Install Rust? (y/N) " FLAG_INSTALL_RUST
-read -p "Install Rust applications? (y/N) " FLAG_INSTALL_RUST_APPS
-read -p "Install Ocaml? (y/N) " FLAG_INSTALL_OCAML
-read -p "Install Python/Pip? (y/N) " FLAG_INSTALL_PYTHON
+read -pr "Symlink dotfiles? (y/N) " FLAG_INSTALL_VIM 
+read -pr "Install dev linux packages? (y/N) " FLAG_INSTALL_PACKAGES
+read -pr "Install Rust? (y/N) " FLAG_INSTALL_RUST
+read -pr "Install Rust applications? (y/N) " FLAG_INSTALL_RUST_APPS
+read -pr "Install Ocaml? (y/N) " FLAG_INSTALL_OCAML
+read -pr "Install Python/Pip? (y/N) " FLAG_INSTALL_PYTHON
 
 ################################# RUN INSTALL ##################################
 
-if [[ "$FLAG_INSTALL_VIM" =~ [yY]{1} ]] then installVim fi
-if [[ "$FLAG_INSTALL_PACKAGES" =~ [yY]{1} ]] then installPackages fi
-if [[ "$FLAG_INSTALL_RUST" =~ [yY]{1} ]] then installRust fi
-if [[ "$FLAG_INSTALL_RUST_APPS" =~ [yY]{1} ]] then installRustApps fi
-if [[ "$FLAG_INSTALL_OCAML" =~ [yY]{1} ]] then installOcaml fi
-if [[ "$FLAG_INSTALL_PYTHON" =~ [yY]{1} ]] then installPython fi
+if [[ "$FLAG_INSTALL_VIM" =~ [yY]{1} ]] 
+then installVim 
+fi
+
+if [[ "$FLAG_INSTALL_PACKAGES" =~ [yY]{1} ]] 
+then installPackages 
+fi
+
+if [[ "$FLAG_INSTALL_RUST" =~ [yY]{1} ]] 
+then installRust 
+fi
+
+if [[ "$FLAG_INSTALL_RUST_APPS" =~ [yY]{1} ]] 
+then installRustApps 
+fi
+
+if [[ "$FLAG_INSTALL_OCAML" =~ [yY]{1} ]] 
+then installOcaml 
+fi
+
+if [[ "$FLAG_INSTALL_PYTHON" =~ [yY]{1} ]] 
+then installPython
+fi
