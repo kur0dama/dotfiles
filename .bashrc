@@ -37,6 +37,8 @@ fi
 
 source git-prompt.sh
 
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 parse_git_bg() {
   if [[ $(git status -s 2> /dev/null) ]]; then
     echo -e "\033[0;31m"
