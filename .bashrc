@@ -35,7 +35,8 @@ fi
 # XTERM COSMETICS
 ################################################################################
 
-# If this is an xterm set the title to user@host:dir
+source git-prompt.sh
+
 parse_git_bg() {
   if [[ $(git status -s 2> /dev/null) ]]; then
     echo -e "\033[0;31m"
@@ -44,7 +45,7 @@ parse_git_bg() {
   fi
 }
 
-PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;34m\]@\[\033[0;34m\]\h \w\[$(parse_git_bg)\]$(__git_ps1)\n\[\033[0;32m\]\$\[\033[0m\] '
+PS1='\[\033[0;32m\]\u\[\033[0;94m\]@\h \w\[$(parse_git_bg)\]$(__git_ps1)\n\[\033[0;32m\]\$\[\033[0m\] '
 
 ################################################################################
 # ALIASES
@@ -118,4 +119,3 @@ bind "set show-all-if-ambiguous off"
 
 [ -d "~/.cargo/env" ] && source "$HOME/.cargo/env"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-source /usr/lib/git-core/git-sh-prompt
