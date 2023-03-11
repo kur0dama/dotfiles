@@ -35,7 +35,7 @@ fi
 # XTERM COSMETICS
 ################################################################################
 
-source git-prompt.sh
+[ -f ~/git-prompt.sh ] && source ~/git-prompt.sh
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
 

@@ -13,6 +13,8 @@ function installVim () {
 
   [ -d ~/.bashrc ] && rm ~/.bashrc
   ln -s ~/dotfiles/.bashrc ~/.bashrc
+  [ -d ~/git-prompt.sh ] && rm ~/git-prompt.sh
+  ln -s ~/dotfiles/git-prompt-sh ~/git-prompt-sh
   [ -d ~/.vimrc ] && rm ~/.vimrc
   ln -s ~/dotfiles/.vimrc ~/.vimrc
   ln -s ~/dotfiles/zenburn.vim ~/.vim/colors/zenburn.vim
